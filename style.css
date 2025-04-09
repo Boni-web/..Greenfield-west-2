@@ -1,0 +1,384 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Google Fonts & Variables */
+:root {
+    --font-primary: 'Lato', sans-serif;
+    --font-headings: 'Montserrat', sans-serif;
+    --color-primary-red: #D32F2F; /* Red */
+    --color-accent-navy: #1A237E; /* Dark Navy Blue */
+    --color-white: #FFFFFF;
+    --color-light-grey: #f4f4f4; /* Alternate background */
+    --color-dark-grey: #333333; /* Main text */
+    --color-medium-grey: #666666;
+    --header-height: 105px;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-dark-grey);
+    line-height: 1.6;
+    background-color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    margin-bottom: 0.8em;
+    color: var(--color-accent-navy); /* Navy headings */
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-primary-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent-navy);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+    background-color: var(--color-white);
+    height: var(--header-height);
+    border-bottom: 2px solid var(--color-primary-red);
+    position: fixed; /* Stick header to top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Adjust as needed */
+    margin-right: 15px;
+}
+
+.school-name {
+    font-family: var(--font-headings);
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-accent-navy);
+}
+
+/* Navigation */
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-navigation li {
+    margin-left: 25px;
+}
+
+.main-navigation a {
+    font-family: var(--font-headings);
+    font-weight: 600;
+    color: var(--color-accent-navy);
+    padding: 10px 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a.active {
+    color: var(--color-primary-red);
+    border-bottom: 2px solid var(--color-primary-red);
+}
+
+/* Mobile Menu Toggle - Hidden on Desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: var(--color-accent-navy);
+    cursor: pointer;
+}
+
+/* Main Content Area */
+main {
+    padding-top: var(--header-height); /* Prevent content from hiding behind fixed header */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(26, 35, 126, 0.7), rgba(26, 35, 126, 0.7)), url('hero-placeholder.jpg') no-repeat center center/cover; /* Placeholder bg image */
+    color: var(--color-white);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    color: var(--color-white);
+    margin-bottom: 0.5em;
+}
+
+.hero-section .tagline {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    font-weight: 400;
+}
+
+/* Buttons */
+.cta-button {
+    background-color: var(--color-primary-red);
+    color: var(--color-white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: var(--font-headings);
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid var(--color-primary-red);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-accent-navy);
+    border-color: var(--color-accent-navy);
+    color: var(--color-white);
+}
+
+.cta-button.secondary {
+     background-color: transparent;
+     color: var(--color-accent-navy);
+     border: 2px solid var(--color-accent-navy);
+     margin-right: 10px; /* Add space between buttons */
+}
+
+.cta-button.secondary:hover {
+     background-color: var(--color-accent-navy);
+     color: var(--color-white);
+}
+
+
+/* Homepage Sections */
+.home-section {
+    padding: 60px 0;
+}
+
+.home-section h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 1.5em;
+}
+
+.alternate-bg {
+    background-color: var(--color-light-grey);
+}
+
+.learn-more-link {
+    display: inline-block;
+    margin-top: 1em;
+    font-weight: 700;
+}
+
+/* Academics Overview */
+.academic-levels {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between items */
+    margin-bottom: 2em;
+}
+
+.academic-levels .level {
+    flex-basis: calc(25% - 20px); /* Adjust basis for 4 items, considering gap */
+    background-color: var(--color-white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 180px; /* Ensure minimum width */
+}
+
+.academic-levels h3 {
+    color: var(--color-primary-red);
+    margin-bottom: 0.5em;
+}
+
+/* News Section */
+.news-items .news-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.news-items .news-item:last-child {
+    border-bottom: none;
+}
+
+.news-items h3 a {
+     color: var(--color-accent-navy);
+}
+.news-items h3 a:hover {
+     color: var(--color-primary-red);
+}
+
+/* CTA Contact Section */
+.cta-contact {
+    text-align: center;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-accent-navy); /* Navy footer */
+    color: var(--color-white);
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px; /* Space between footer columns */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Prevent columns from becoming too narrow */
+}
+
+.footer-section h4 {
+    color: var(--color-white);
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--color-primary-red);
+    padding-bottom: 0.5em;
+    display: inline-block;
+}
+
+.footer-section p, .footer-section li {
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+}
+
+.footer-section a {
+    color: var(--color-white);
+}
+
+.footer-section a:hover {
+    color: var(--color-primary-red);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-motto p:last-child {
+    margin-top: 1.5em;
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .school-name {
+        font-size: 1.2em;
+    }
+
+    .main-navigation {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--color-white);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .main-navigation ul {
+        display: none; /* Hide nav by default */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-navigation ul.active {
+        display: flex; /* Show when active */
+    }
+
+    .main-navigation li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+     .main-navigation li:last-child {
+        border-bottom: none;
+    }
+
+    .main-navigation a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+        border-bottom: none; /* Remove bottom border for links */
+    }
+     .main-navigation a:hover,
+     .main-navigation a.active {
+         background-color: var(--color-light-grey);
+         color: var(--color-primary-red); /* Ensure hover color applies */
+         border-bottom: none;
+     }
+
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .academic-levels {
+        flex-direction: column; /* Stack academic levels */
+        align-items: center;
+    }
+    .academic-levels .level {
+        flex-basis: 80%; /* Allow levels to take more width */
+        max-width: 400px;
+    }
+
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+     .footer-section h4 {
+         display: block; /* Make heading block for center alignment */
+         text-align: center;
+     }
+}
